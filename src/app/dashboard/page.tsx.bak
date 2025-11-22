@@ -1,0 +1,208 @@
+"use client";
+
+import { ProtectedRoute } from "@/components/protected-route";
+
+export default function DashboardPage() {
+  return (
+    <ProtectedRoute>
+      <div className="min-h-screen bg-neutral-950 text-neutral-50 flex">
+        {/* Sidebar */}
+        <aside className="w-64 border-r border-neutral-800 bg-neutral-950/80 backdrop-blur flex flex-col">
+          <div className="h-16 flex items-center px-6 border-b border-neutral-800">
+            <div className="h-9 w-9 rounded-xl bg-emerald-500 flex items-center justify-center font-bold text-neutral-900 mr-3">
+              RX
+            </div>
+            <div>
+              <div className="text-sm font-semibold">Rodix Cloud</div>
+              <div className="text-xs text-neutral-400">
+                E-commerce Control Center
+              </div>
+            </div>
+          </div>
+
+          <nav className="flex-1 py-4 px-2 space-y-1 text-sm">
+            <div className="px-3 text-[11px] uppercase tracking-wider text-neutral-500 mb-1">
+              Dashboard
+            </div>
+            <button className="w-full flex items-center gap-2 px-3 py-2 rounded-md bg-emerald-500/10 text-emerald-400">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-emerald-500/20 text-[11px]">
+                ⬢
+              </span>
+              <span>Global overview</span>
+            </button>
+            <button className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-neutral-300 hover:bg-neutral-800/60">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-neutral-800 text-[11px]">
+                🏬
+              </span>
+              <span>Stores</span>
+            </button>
+            <button className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-neutral-300 hover:bg-neutral-800/60">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-neutral-800 text-[11px]">
+                👥
+              </span>
+              <span>Customers</span>
+            </button>
+            <button className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-neutral-300 hover:bg-neutral-800/60">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-neutral-800 text-[11px]">
+                💳
+              </span>
+              <span>Billing</span>
+            </button>
+
+            <div className="px-3 pt-4 text-[11px] uppercase tracking-wider text-neutral-500 mb-1">
+              Analytics
+            </div>
+            <button className="w-full flex items-center gap-2 px-3 py-2 rounded-md text-neutral-300 hover:bg-neutral-800/60">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-md bg-neutral-800 text-[11px]">
+                📈
+              </span>
+              <span>Reports</span>
+            </button>
+          </nav>
+
+          <div className="border-t border-neutral-800 p-4 text-xs text-neutral-400">
+            <div className="flex items-center justify-between">
+              <span>Plan: Growth</span>
+              <span className="text-emerald-400 font-medium">14-day trial</span>
+            </div>
+            <div className="mt-1 text-[11px]">
+              You are using Rodix Growth. After trial: 199$/mo.
+            </div>
+          </div>
+        </aside>
+
+        {/* Main content */}
+        <main className="flex-1 flex flex-col">
+          {/* Top bar */}
+          <header className="h-16 border-b border-neutral-800 flex items-center justify-between px-6">
+            <div>
+              <div className="text-xs tracking-[0.2em] uppercase text-neutral-500">
+                Dashboard
+              </div>
+              <div className="text-sm font-semibold mt-1">
+                Global overview
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 text-xs">
+              <button className="px-3 py-1.5 rounded-full border border-neutral-700 text-neutral-300 hover:bg-neutral-800/80">
+                EN
+              </button>
+              <div className="h-8 w-px bg-neutral-800" />
+              <div className="text-neutral-400">
+                Logged in as{" "}
+                <span className="font-medium text-neutral-100">
+                  admin@example.com
+                </span>
+              </div>
+            </div>
+          </header>
+
+          {/* Content */}
+          <section className="flex-1 p-6 space-y-6 overflow-y-auto">
+            {/* KPI cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="bg-neutral-900/70 border border-neutral-800 rounded-xl p-4">
+                <div className="text-xs text-neutral-400">
+                  MRR (Monthly Recurring Revenue)
+                </div>
+                <div className="mt-2 text-2xl font-semibold">$8,420</div>
+                <div className="mt-1 text-[11px] text-emerald-400">
+                  +18.3% vs last 30 days
+                </div>
+              </div>
+
+              <div className="bg-neutral-900/70 border border-neutral-800 rounded-xl p-4">
+                <div className="text-xs text-neutral-400">Active stores</div>
+                <div className="mt-2 text-2xl font-semibold">46</div>
+                <div className="mt-1 text-[11px] text-emerald-400">
+                  +7 stores this week
+                </div>
+              </div>
+
+              <div className="bg-neutral-900/70 border border-neutral-800 rounded-xl p-4">
+                <div className="text-xs text-neutral-400">Active customers</div>
+                <div className="mt-2 text-2xl font-semibold">1,238</div>
+                <div className="mt-1 text-[11px] text-emerald-400">
+                  +92 new signups
+                </div>
+              </div>
+
+              <div className="bg-neutral-900/70 border border-neutral-800 rounded-xl p-4">
+                <div className="text-xs text-neutral-400">Churn rate</div>
+                <div className="mt-2 text-2xl font-semibold">1.2%</div>
+                <div className="mt-1 text-[11px] text-red-400">
+                  −0.4% better than last month
+                </div>
+              </div>
+            </div>
+
+            {/* Chart + activity */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="lg:col-span-2 bg-neutral-900/70 border border-neutral-800 rounded-xl p-4 flex flex-col">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <div className="text-xs text-neutral-400">
+                      Revenue timeline
+                    </div>
+                    <div className="text-xs text-neutral-500">
+                      Last 30 days
+                    </div>
+                  </div>
+                  <button className="px-3 py-1.5 rounded-full border border-neutral-700 text-xs text-neutral-300 hover:bg-neutral-800/80">
+                    Live data coming from backend soon
+                  </button>
+                </div>
+
+                <div className="flex-1 flex items-center justify-center text-neutral-600 text-xs border border-dashed border-neutral-700 rounded-lg">
+                  Beautiful chart placeholder · v1
+                </div>
+              </div>
+
+              <div className="bg-neutral-900/70 border border-neutral-800 rounded-xl p-4">
+                <div className="text-xs text-neutral-400 mb-3">
+                  Recent activity
+                </div>
+                <ul className="space-y-3 text-xs">
+                  <li>
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <span className="font-medium text-neutral-100">
+                        New store onboarded
+                      </span>
+                    </div>
+                    <div className="ml-4 text-neutral-400">
+                      "Morocco Streetwear" just finished setup.
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+                      <span className="font-medium text-neutral-100">
+                        Pixel connected
+                      </span>
+                    </div>
+                    <div className="ml-4 text-neutral-400">
+                      Meta + TikTok pixels synced for 12 stores.
+                    </div>
+                  </li>
+                  <li>
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-violet-400" />
+                      <span className="font-medium text-neutral-100">
+                        n8n automation deployed
+                      </span>
+                    </div>
+                    <div className="ml-4 text-neutral-400">
+                      WooCommerce → Shopify product sync active.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </ProtectedRoute>
+  );
+}
